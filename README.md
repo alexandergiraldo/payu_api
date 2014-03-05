@@ -32,12 +32,54 @@ This gem allows you to integrate with PayU Recurring Payments API. It is designe
 payu = PayuApi::PayU.new 'api_login', 'api_key'
 ```
 
+### Plans
+
+Read
+
+```ruby
+payu.plans.get 'plan_id'
+```
+
+Create
+
+```ruby
+plan = {
+"planCode" => "sample-plan-code-004",
+"description" => "Sample Plan 004",
+"accountId" => "xxxxx",
+"intervalCount" => "1",
+"interval" => "MONTH",
+"maxPaymentsAllowed" => "12",
+"maxPaymentAttempts" => "3",
+"paymentAttemptsDelay" => "1",
+"maxPendingPayments" => "0",
+"trialDays" => "0",
+"additionalValues" => [
+    {
+      "name" => "PLAN_VALUE",
+      "value" => "3000",
+      "currency" => "USD"
+    }
+  ]
+}
+
+payu.plans.create(plan)
+```
+
+Update
+
+```ruby
+plan = { "description" => "New Sample Plan 004" }
+
+payu.plans.update('plan_id',plan)
+```
+
 TODO:
 
-Missing xml format support
-Add Additional charges API
-Add documentation
-Add tests
+1. Missing xml format support
+2. Add Additional charges API
+3. Add documentation
+4. Add tests
 
 ## Contributing
 
