@@ -37,7 +37,7 @@ payu = PayuApi::PayU.new 'api_login', 'api_key'
 Read
 
 ```ruby
-payu.plans.get 'plan_id'
+payu.plans.get 'planCode'
 ```
 
 Create
@@ -71,8 +71,15 @@ Update
 ```ruby
 plan = { "description" => "New Sample Plan 004" }
 
-payu.plans.update('plan_id',plan)
+payu.plans.update('planCode',plan)
 ```
+
+Delete
+
+```ruby
+payu.plans.delete('planCode')
+```
+
 
 TODO:
 
