@@ -3,7 +3,7 @@ require "base64"
 require 'json'
 require 'net/http'
 require 'ostruct'
-%w{ base plans customers credit_cards subscriptions }.each do |f|
+%w{ base plans customers credit_cards subscriptions recurring_bill_items }.each do |f|
   require "payu_api/#{f}"
 end
 
@@ -37,6 +37,10 @@ module PayuApi
 
     def subscriptions
       Subscriptions.new(basic_auth, @format)
+    end
+
+    def recurring_bills
+      RecurringBillItems.new(basic_auth, @format)
     end
 
     private
