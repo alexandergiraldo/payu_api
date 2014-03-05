@@ -3,10 +3,10 @@
 Simple integration with PayU Recurring Payments API
 
 This gem allows you to create, read, update and delete:
-    Plans
-    Customers
-    Credit cards
-    Suscriptions
+  *  Plans
+  *  Customers
+  *  Credit cards
+  *  Suscriptions
 
 ## Installation
 
